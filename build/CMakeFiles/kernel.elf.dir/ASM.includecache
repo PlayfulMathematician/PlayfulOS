@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/otis/stuff_bin/PlayfulOS/kernel/arch/x86_64/boot/entry.S
+
+/home/otis/stuff_bin/PlayfulOS/kernel/arch/x86_64/interrupts/interrupts.S
+

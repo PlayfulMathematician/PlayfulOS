@@ -1,0 +1,28 @@
+kernel.elf: \
+  /home/otis/stuff_bin/PlayfulOS/kernel/linker.ld \
+  CMakeFiles/kernel.elf.dir/kernel/kmain.c.o \
+  CMakeFiles/kernel.elf.dir/kernel/drivers/tty/tty.c.o \
+  CMakeFiles/kernel.elf.dir/kernel/drivers/keyboard/keyboard.c.o \
+  CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/idt.c.o \
+  CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/isr.c.o \
+  CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/pic.c.o \
+  CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/interrupts.S.o \
+  CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/boot/entry.S.o
+
+/home/otis/stuff_bin/PlayfulOS/kernel/linker.ld:
+
+CMakeFiles/kernel.elf.dir/kernel/kmain.c.o:
+
+CMakeFiles/kernel.elf.dir/kernel/drivers/tty/tty.c.o:
+
+CMakeFiles/kernel.elf.dir/kernel/drivers/keyboard/keyboard.c.o:
+
+CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/idt.c.o:
+
+CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/isr.c.o:
+
+CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/pic.c.o:
+
+CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/interrupts/interrupts.S.o:
+
+CMakeFiles/kernel.elf.dir/kernel/arch/x86_64/boot/entry.S.o:
