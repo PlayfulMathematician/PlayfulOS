@@ -1,3 +1,0 @@
-/home/otis/stuff_bin/PlayfulOS/build/CMakeFiles/kernel.elf.dir
-/home/otis/stuff_bin/PlayfulOS/build/CMakeFiles/edit_cache.dir
-/home/otis/stuff_bin/PlayfulOS/build/CMakeFiles/rebuild_cache.dir
