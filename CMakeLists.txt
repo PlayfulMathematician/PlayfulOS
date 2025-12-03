@@ -18,7 +18,7 @@ add_executable(kernel.elf
     kernel/drivers/tty/tty.c
     kernel/drivers/keyboard/keyboard.c
     kernel/arch/x86_64/interrupts/idt.c
-    kernel/arch/x86_64/interrupts/isr.c
+    kernel/arch/x86_64/interrupts/interrupt.c
     kernel/arch/x86_64/interrupts/pic.c
     kernel/arch/x86_64/interrupts/interrupts.S
     kernel/arch/x86_64/boot/entry.S

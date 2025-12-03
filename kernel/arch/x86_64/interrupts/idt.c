@@ -22,9 +22,15 @@ static struct idt_entry idt[IDT_ENTRIES];
 extern void *isr_stub_table[];
 
 void idt_set_gate(int n, uint64_t handler, uint16_t sel, uint8_t flags) {
+  idt_set_gate_full(n, handler, sel, flags, 0);
+}
+
+void idt_set_gate_full(int n, uint64_t handler, uint16_t sel, uint8_t flags, uint8_t ist) {
+  if (n >= IDT_ENTRIES) return;
+  
   idt[n].isr_low = handler & 0xFFFF;
   idt[n].kernel_cs = sel;
-  idt[n].ist = 0;
+  idt[n].ist = ist;
   idt[n].flags = flags;
   idt[n].isr_mid = (handler >> 16) & 0xFFFF;
   idt[n].isr_high = (handler >> 32) & 0xFFFFFFFF;
@@ -36,7 +42,7 @@ void idt_init(void) {
   idtr.limit = (sizeof(struct idt_entry) * IDT_ENTRIES) - 1;
   idtr.base = (uint64_t)idt;
 
-  for (int i = 0; i < 48; i++) {
+  for (int i = 0; i < IDT_ENTRIES; i++) {
     idt_set_gate(i, (uint64_t)isr_stub_table[i], 0x08, 0x8E);
   }
 
