@@ -1,4 +1,4 @@
-#include "io/io.h"
+#include "drivers/io/io.h"
 #include <stdint.h>
 
 #define PIC1 0x20
@@ -21,7 +21,7 @@ void pic_remap(void) {
   outb(PIC1_DATA, 1);
   outb(PIC2_DATA, 1);
 
-  outb(PIC1_DATA, 0xFD);
+  outb(PIC1_DATA, 0xFC);
   outb(PIC2_DATA, 0xFF);
 }
 
