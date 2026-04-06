@@ -8,4 +8,3 @@ void tty_write(const char *str);
 void tty_write_len(const char *str, size_t len);
 void tty_putchar(char c);
 void vga_disable_cursor(void);
-

@@ -1,6 +1,5 @@
 #include "vga_text.h"
 
-
 #define VGA_WIDTH 80
 #define VGA_HEIGHT 25
 #define VGA_MEMORY ((uint16_t *)0xB8000)
@@ -91,12 +90,9 @@ void tty_write(const char *str) {
 #include "drivers/io/io.h"
 
 void vga_disable_cursor(void) {
-    // Select cursor start register (0x0A)
-    outb(0x3D4, 0x0A);
-    uint8_t cur_start = inb(0x3D5);
+  outb(0x3D4, 0x0A);
+  uint8_t cur_start = inb(0x3D5);
 
-    // Set bit 5 to disable cursor
-    outb(0x3D4, 0x0A);
-    outb(0x3D5, cur_start | 0x20);
+  outb(0x3D4, 0x0A);
+  outb(0x3D5, cur_start | 0x20);
 }
-

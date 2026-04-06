@@ -25,9 +25,11 @@ void idt_set_gate(int n, uint64_t handler, uint16_t sel, uint8_t flags) {
   idt_set_gate_full(n, handler, sel, flags, 0);
 }
 
-void idt_set_gate_full(int n, uint64_t handler, uint16_t sel, uint8_t flags, uint8_t ist) {
-  if (n >= IDT_ENTRIES) return;
-  
+void idt_set_gate_full(int n, uint64_t handler, uint16_t sel, uint8_t flags,
+                       uint8_t ist) {
+  if (n >= IDT_ENTRIES)
+    return;
+
   idt[n].isr_low = handler & 0xFFFF;
   idt[n].kernel_cs = sel;
   idt[n].ist = ist;

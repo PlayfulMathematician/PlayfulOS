@@ -44,8 +44,11 @@ void handle_command(const char *cmd) {
   }
 
   else if (cmd[0] == 'w' && cmd[1] == 'a' && cmd[2] == 'i' && cmd[3] == 't') {
-    // Format is: wait X
-    int seconds = cmd[5] - '0'; // ONE DIGIT for simplicity
+    int seconds = cmd[5] - '0';
+    if (cmd[6] != '\0') {
+      seconds *= 10;
+      int seconds = cmd[6] - '0';
+    }
     tty_write("Waiting...\n");
     pit_sleep_ms(seconds * 1000);
     tty_write("Done.\n");

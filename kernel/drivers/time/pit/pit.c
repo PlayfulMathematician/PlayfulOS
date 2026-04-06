@@ -22,15 +22,14 @@ void pit_init(uint32_t frequency) {
   outb(0x40, divisor & 0xFF);
   outb(0x40, (divisor >> 8) & 0xFF);
 
-  interrupt_register(32, pit_handle_irq, (void*)0);
+  interrupt_register(32, pit_handle_irq, (void *)0);
 
   interrupt_enable_irq(0);
 }
 
 void pit_sleep_ms(uint64_t ms) {
-    uint64_t target = pit_ticks() + ms;
-    while (pit_ticks() < target) {
-        asm volatile("hlt");
-    }
+  uint64_t target = pit_ticks() + ms;
+  while (pit_ticks() < target) {
+    asm volatile("hlt");
+  }
 }
-

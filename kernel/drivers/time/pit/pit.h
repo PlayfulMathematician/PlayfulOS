@@ -9,4 +9,3 @@ uint64_t pit_ticks(void);
 
 void pit_handle_irq(struct interrupt_context *ctx);
 void pit_sleep_ms(uint64_t ms);
-
